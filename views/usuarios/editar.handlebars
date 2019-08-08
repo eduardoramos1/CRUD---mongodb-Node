@@ -1,0 +1,26 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{aviso}}</div>
+{{/each}}
+{{#if sucesso}}
+    <div class="alert alert-success">{{sucesso.mensagem}}</div>
+{{/if}}
+
+{{#if usuario}}
+<div class="card shadow border border-secondary rounded-0">
+    <div class="card-body">
+        <h1 class="my-3">Formulário de Cadastro:</h1>
+        <form action="/editar" method="post">
+            <input type="hidden" name="id" value="{{usuario._id}}" >
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" class="form-control" value="{{usuario.nome}}" required>
+            <label for="senha">Senha:</label>
+            <input type="password" name="senha" class="form-control" value="{{usuario.senha}}" required>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" class="form-control" value="{{usuario.idade}}" required>
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" class="form-control" value="{{usuario.cidade}}" required>
+            <button type="submit" class="btn btn-success mt-4" >Cadastrar</button>
+        </form>
+    </div>
+</div>
+{{/if}}
